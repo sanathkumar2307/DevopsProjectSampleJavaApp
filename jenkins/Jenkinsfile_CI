@@ -7,7 +7,7 @@ pipeline {
         stage('compile') {
 	   steps {
                 echo 'compiling..'
-		git url: 'https://github.com/puneetgavri/DevopsProjectSampleJavaApp.git'
+		git url: 'https://github.com/sanathkumar2307/DevopsProjectSampleJavaApp.git'
 		sh script: '/opt/maven/bin/mvn compile'
            }
         }
@@ -81,7 +81,7 @@ pipeline {
         stage("Docker Push"){
             steps{
             sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            sh "docker push puneetgavri/sampleappimage:latest"
+            sh "docker push sanathkumar2307/test_app"
             }
         }
     }
